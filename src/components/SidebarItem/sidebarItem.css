@@ -13,12 +13,24 @@
   padding: 5px;
 }
 
-.sidebarItem:hover,
-.sidebarItem:hover > p,
-.sidebarItem:hover > h3 {
+.sidebarItem__active,
+.sidebarItem__active > p,
+.sidebarItem__active > h3 {
   background-color: #fcecec;
   color: #c04b37 !important;
   font-weight: 800 !important;
+}
+
+.sidebarItem:hover,
+.sidebarItem:hover > p,
+.sidebarItem:hover > h3 {
+  background: rgba(242,245,245,0.8);
+  /* color: #c04b37 !important;
+  font-weight: 800 !important; */
+}
+
+.sidebarItem__active > p {
+  display: inline !important;
 }
 
 .sidebarItem > h3 {
