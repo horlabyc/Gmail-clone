@@ -27,7 +27,7 @@ const EmailRow = ({id, title, subject, description, time}) => {
             <span className="emailRow__description"> - {description}</span>
           </h4>
         </div>
-        <parent className="emailRow__time">{time}</parent>
+        <p className="emailRow__time">{time}</p>
     </div>
   );
 }
