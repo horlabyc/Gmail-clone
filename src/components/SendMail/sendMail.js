@@ -7,6 +7,8 @@ import { Button } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux'
 import { closeSendMessageBox,openSendMessageBox, minimizeSendMessageBox, selectSendMessageBoxIsMinimized } from '../../features/mailSlice';
+import { db } from '../../app/firebase';
+import firebase from 'firebase';
 
 const SendMail = () => {
 
@@ -14,7 +16,13 @@ const SendMail = () => {
   const dispatch = useDispatch();
   const sendMessageBoxIsMinimized = useSelector(selectSendMessageBoxIsMinimized)
   const onSubmit = (data) => {
-    console.log(data);
+    db.collection('emails').add({
+      to: data.to,
+      subject: data.subject,
+      message: data.message,
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+    dispatch(closeSendMessageBox());
   }
   return (  
     <div className={`sendMail ${sendMessageBoxIsMinimized ? 'sendMail__minimized' : ''}`}>

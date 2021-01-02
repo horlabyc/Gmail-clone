@@ -16,11 +16,13 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import GradeOutlinedIcon from '@material-ui/icons/GradeOutlined';
 import ReplyOutlinedIcon from '@material-ui/icons/ReplyOutlined';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectOpenMail } from '../../features/mailSlice';
 
 const Mail = () => {
 
   const history = useHistory();
-
+  const activeMail = useSelector(selectOpenMail);
   return (  
     <div className="mail">
       <div className="mail__tools">
@@ -72,12 +74,12 @@ const Mail = () => {
       <div className="mail__body">
         <div className="mail__body__header">
           <div className="mail__body__header__right">
-            <h2 className="mail__subject">Subject</h2>
+            <h2 className="mail__subject">{activeMail?.subject}</h2>
             <LabelImportantIcon className="mail__important"/>
-            <p className="mail__title">Title</p>
+            <p className="mail__title">{activeMail?.title}</p>
           </div>
           <div className="mail__body__header__left">
-            <p className="mail__time">Wed, Dec 23, 2020, 7:56 AM </p>
+            <p className="mail__time">{activeMail?.time}</p>
             <IconButton>
               <GradeOutlinedIcon />
             </IconButton>
@@ -91,8 +93,7 @@ const Mail = () => {
         </div>
         <div className="mail__body__message">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde explicabo porro nemo velit necessitatibus dicta maiores expedita, ab quisquam cumque.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde explicabo porro nemo velit necessitatibus dicta maiores expedita, ab quisquam cumque.
+            {activeMail?.description  }
           </p>
         </div>
       </div>

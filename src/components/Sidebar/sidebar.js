@@ -28,13 +28,13 @@ const Sidebar = () => {
       >
         Compose
       </Button>
-      <SidebarItem Icon={InboxIcon} title="Inbox" count={54}/>
-      <SidebarItem Icon={StarIcon} title="Starred" count={25} selected={true}/>
-      <SidebarItem Icon={AccessTimeIcon} title="Snoozed" count={25}/>
-      <SidebarItem Icon={LabelImportantIcon} title="Important" count={25}/>
-      <SidebarItem Icon={NearMeIcon} title="Sent" count={25} selected={true}/>
-      <SidebarItem Icon={NoteIcon} title="Drafts" count={15}/>
-      <SidebarItem Icon={ExpandMoreIcon} title="More" count={15}/>
+      <SidebarItem Icon={InboxIcon} title="Inbox" count={54} selected={true}/>
+      <SidebarItem Icon={StarIcon} title="Starred" count={null}/>
+      <SidebarItem Icon={AccessTimeIcon} title="Snoozed" count={null}/>
+      <SidebarItem Icon={LabelImportantIcon} title="Important" count={null}/>
+      <SidebarItem Icon={NearMeIcon} title="Sent" count={null}/>
+      <SidebarItem Icon={NoteIcon} title="Drafts" count={null}/>
+      <SidebarItem Icon={ExpandMoreIcon} title="More" count={null}/>
 
       <div className="sidebar__footer">
         <div className="sidebar__footerIcons">
